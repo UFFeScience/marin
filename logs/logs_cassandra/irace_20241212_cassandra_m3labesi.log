@@ -1,0 +1,356 @@
+#------------------------------------------------------------------------------
+# irace: An implementation in R of (Elitist) Iterated Racing
+# Version: 4.0.886dd4c
+# Copyright (C) 2010-2020
+# Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+# Jeremie Dubois-Lacoste  
+# Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+#
+# This is free software, and you are welcome to redistribute it under certain
+# conditions.  See the GNU General Public License for details. There is NO
+# WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# irace builds upon previous code from the race package:
+#     race: Racing methods for the selection of the best
+#     Copyright (C) 2003 Mauro Birattari
+#------------------------------------------------------------------------------
+# installed at: /home/italons/R/x86_64-pc-linux-gnu-library/4.1/irace
+# called with: 
+# 2024-12-12 00:01:19 -03: Reading parameter file '/home/italons/Projects/marin/irace_configuration/parameters_cassandra.txt'.
+# 2024-12-12 00:01:19 -03: Read 1 configuration(s) from file '/home/italons/Projects/marin/irace_configuration/configurations_cassandra.txt'
+# 2024-12-12 00:01:19 -03: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 4
+# minNbSurvival: 4
+# nbParameters: 5
+# seed: 1698899160
+# confidence level: 0.95
+# budget: 1000
+# mu: 5
+# deterministic: FALSE
+
+# 2024-12-12 00:01:19 -03: Iteration 1 of 4
+# experimentsUsedSoFar: 0
+# remainingBudget: 1000
+# currentBudget: 250
+# nbConfigurations: 41
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|          1|         41|          9|     35.22151600|         41|00:31:24|   NA|  NA|    NA|
+|x|          2|         41|         24|     34.11303450|         82|00:30:25|+0.88|0.94|0.0204|
+|x|          3|         41|         14|     33.82945667|        123|00:30:21|+0.90|0.93|0.0130|
+|x|          4|         41|          9|     33.43635125|        164|00:30:29|+0.88|0.91|0.0103|
+|-|          5|          7|         24|     33.39591040|        205|00:30:24|+0.01|0.21|0.8437|
+|=|          6|          7|         24|     33.28137683|        212|00:04:20|-0.02|0.15|0.8217|
+|=|          7|          7|         24|     33.20817271|        219|00:04:19|+0.03|0.17|0.8042|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          24    mean value:      33.20817271
+Description of the best-so-far configuration:
+   .ID. spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes .PARENT.
+24   24                                LOCAL_ONE                                  512                                   3000                                              3000                                       20       NA
+
+# 2024-12-12 02:43:06 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+24                                LOCAL_ONE                                  512                                   3000                                              3000                                       20
+12                                      ANY                                 1024                                    100                                              5000                                       20
+14                                      ANY                                  128                                    100                                              5000                                       20
+9                                 LOCAL_ONE                                  512                                    100                                              1000                                       20
+# 2024-12-12 02:43:06 -03: Iteration 2 of 4
+# experimentsUsedSoFar: 219
+# remainingBudget: 781
+# currentBudget: 260
+# nbConfigurations: 36
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|          8|         36|         45|     32.75795200|         36|00:26:14|   NA|  NA|    NA|
+|x|          2|         36|         45|     32.64043600|         68|00:23:44|+0.85|0.92|0.0005|
+|x|          7|         36|         45|     32.67346000|        100|00:23:43|+0.83|0.89|0.0007|
+|x|          3|         36|         45|     32.70861475|        132|00:23:48|+0.83|0.87|0.0007|
+|-|          1|          7|         45|     32.74166940|        164|00:24:03|+0.20|0.36|0.6219|
+|=|          6|          7|         45|     32.83565983|        167|00:01:51|+0.05|0.21|0.7774|
+|=|          5|          7|         45|     32.97154200|        170|00:01:53|-0.04|0.10|0.8635|
+|=|          4|          7|         45|     33.05613775|        173|00:01:51|-0.10|0.04|0.9118|
+|=|          9|          7|         45|     33.05242644|        180|00:04:19|-0.07|0.05|0.8834|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          45    mean value:      33.05242644
+Description of the best-so-far configuration:
+   .ID. spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes .PARENT.
+45   45                                LOCAL_ONE                                 1024                                    100                                              5000                                       20       14
+
+# 2024-12-12 04:54:37 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+45                                LOCAL_ONE                                 1024                                    100                                              5000                                       20
+59                                LOCAL_ONE                                  512                                    500                                              3000                                       20
+46                                LOCAL_ONE                                 1024                                   2000                                              2000                                       20
+24                                LOCAL_ONE                                  512                                   3000                                              3000                                       20
+# 2024-12-12 04:54:37 -03: Iteration 3 of 4
+# experimentsUsedSoFar: 399
+# remainingBudget: 601
+# currentBudget: 300
+# nbConfigurations: 33
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|         10|         33|         46|     32.66642500|         33|00:23:02|   NA|  NA|    NA|
+|x|          2|         33|         46|     32.67497050|         62|00:20:39|+0.83|0.91|0.0009|
+|x|          7|         33|         46|     32.78418233|         91|00:20:46|+0.83|0.88|0.0008|
+|x|          9|         33|         46|     32.78223575|        120|00:20:37|+0.80|0.85|0.0009|
+|-|          1|          7|         97|     32.75796020|        149|00:20:34|-0.00|0.20|0.7561|
+|=|          5|          7|         97|     32.77173617|        152|00:01:51|-0.05|0.12|0.8517|
+|=|          8|          7|         97|     32.74853114|        155|00:01:51|+0.03|0.17|0.7987|
+|=|          3|          7|         97|     32.75667500|        158|00:01:51|+0.11|0.22|0.7657|
+|=|          6|          7|         97|     32.77712278|        161|00:01:51|+0.12|0.22|0.7809|
+|=|          4|          7|         97|     32.81510930|        164|00:01:52|+0.10|0.19|0.7876|
+|-|         11|          3|         97|     32.79694100|        171|00:04:20|+0.25|0.32|0.5255|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          97    mean value:      32.79694100
+Description of the best-so-far configuration:
+   .ID. spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes .PARENT.
+97   97                                LOCAL_ONE                                  128                                    100                                              5000                                       20       45
+
+# 2024-12-12 06:53:56 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+97                                LOCAL_ONE                                  128                                    100                                              5000                                       20
+45                                LOCAL_ONE                                 1024                                    100                                              5000                                       20
+46                                LOCAL_ONE                                 1024                                   2000                                              2000                                       20
+# 2024-12-12 06:53:56 -03: Iteration 4 of 4
+# experimentsUsedSoFar: 570
+# remainingBudget: 430
+# currentBudget: 430
+# nbConfigurations: 38
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|         12|         38|         45|     32.62671300|         38|00:24:13|   NA|  NA|    NA|
+|x|          9|         38|        117|     32.73097300|         73|00:22:27|+0.55|0.77|0.0039|
+|x|         11|         38|         97|     32.81735167|        108|00:22:28|+0.65|0.77|0.0102|
+|x|          4|         38|        108|     32.93403975|        143|00:22:22|+0.59|0.69|0.0086|
+|-|          3|         20|         97|     32.88454500|        178|00:22:24|-0.11|0.11|1.0472|
+|=|          2|         20|         97|     32.85671600|        195|00:10:29|-0.08|0.10|1.0386|
+|=|          7|         20|         97|     32.85821071|        212|00:10:30|-0.01|0.13|0.9888|
+|=|          1|         20|         97|     32.82982512|        229|00:10:30|+0.00|0.13|0.9620|
+|=|         10|         20|         97|     32.83030067|        246|00:10:31|+0.03|0.14|0.9308|
+|=|          8|         20|         97|     32.80820070|        263|00:10:30|+0.06|0.16|0.8937|
+|-|          5|          7|         97|     32.81114755|        280|00:10:31|+0.04|0.12|0.8124|
+|=|          6|          7|         97|     32.82194400|        284|00:02:28|+0.05|0.13|0.7884|
+|=|         13|          7|         97|     32.82327369|        291|00:04:17|+0.06|0.13|0.7848|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          97    mean value:      32.82327369
+Description of the best-so-far configuration:
+   .ID. spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes .PARENT.
+97   97                                LOCAL_ONE                                  128                                    100                                              5000                                       20       45
+
+# 2024-12-12 09:57:41 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+97                                 LOCAL_ONE                                  128                                    100                                              5000                                       20
+45                                 LOCAL_ONE                                 1024                                    100                                              5000                                       20
+126                                LOCAL_ONE                                  512                                    100                                              5000                                       20
+46                                 LOCAL_ONE                                 1024                                   2000                                              2000                                       20
+# 2024-12-12 09:57:41 -03: Iteration 5 of 5
+# experimentsUsedSoFar: 861
+# remainingBudget: 139
+# currentBudget: 139
+# nbConfigurations: 13
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|         14|         13|        141|     32.73956600|         13|00:08:10|   NA|  NA|    NA|
+|x|          6|         13|        141|     32.80595950|         22|00:05:43|+0.71|0.86|0.0164|
+|x|         10|         13|        141|     32.94988967|         31|00:05:43|+0.59|0.73|0.0209|
+|x|         11|         13|         97|     32.83184675|         40|00:05:43|+0.65|0.73|0.0194|
+|-|         13|          7|        141|     32.85273740|         49|00:05:44|-0.10|0.12|0.9070|
+|=|          8|          7|         97|     32.79598633|         52|00:01:55|-0.06|0.12|0.8805|
+|=|         12|          7|         97|     32.83898500|         55|00:01:51|-0.01|0.13|0.8325|
+|=|          2|          7|         97|     32.82380825|         58|00:01:51|-0.02|0.11|0.8352|
+|=|          4|          7|         97|     32.86082822|         61|00:01:50|-0.04|0.08|0.8582|
+|=|          3|          7|         97|     32.85611360|         64|00:01:50|+0.01|0.11|0.8397|
+|=|          9|          7|         97|     32.84554145|         67|00:01:52|+0.04|0.13|0.8041|
+|=|          7|          7|         97|     32.84734458|         70|00:01:50|+0.08|0.16|0.7675|
+|=|          5|          7|         97|     32.84682700|         73|00:01:51|+0.07|0.14|0.7743|
+|-|          1|          4|         97|     32.83141979|         76|00:01:51|-0.03|0.05|0.7678|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          97    mean value:      32.83141979
+Description of the best-so-far configuration:
+   .ID. spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes .PARENT.
+97   97                                LOCAL_ONE                                  128                                    100                                              5000                                       20       45
+
+# 2024-12-12 10:45:33 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+97                                 LOCAL_ONE                                  128                                    100                                              5000                                       20
+141                                LOCAL_ONE                                 1024                                    100                                              5000                                       20
+143                                LOCAL_ONE                                  512                                    100                                              5000                                       20
+# 2024-12-12 10:45:33 -03: Iteration 6 of 6
+# experimentsUsedSoFar: 937
+# remainingBudget: 63
+# currentBudget: 63
+# nbConfigurations: 7
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|         15|          7|        143|     32.87915200|          7|00:04:44|   NA|  NA|    NA|
+|x|          5|          7|        149|     32.95809750|         11|00:02:53|+0.04|0.52|0.0004|
+|x|          9|          7|         97|     32.96849800|         15|00:02:53|+0.33|0.56|0.0003|
+|x|          2|          7|         97|     32.90576625|         19|00:02:53|+0.46|0.59|0.0003|
+|-|         12|          5|        149|     32.89501240|         23|00:02:53|-0.02|0.18|0.8129|
+|=|         14|          5|         97|     32.94289350|         25|00:01:14|-0.13|0.06|0.9199|
+|=|         13|          5|         97|     32.92808443|         27|00:01:14|-0.12|0.04|0.9260|
+|=|          4|          5|         97|     32.95669737|         29|00:01:14|-0.08|0.05|0.8987|
+|=|          3|          5|         97|     32.94080678|         31|00:01:16|-0.02|0.10|0.8704|
+|=|          1|          5|         97|     32.90983870|         33|00:01:15|+0.03|0.13|0.8300|
+|=|          7|          5|         97|     32.90596055|         35|00:01:15|+0.08|0.16|0.7988|
+|=|          6|          5|         97|     32.90885592|         37|00:01:14|+0.12|0.19|0.7671|
+|-|         11|          3|         97|     32.88627146|         39|00:01:14|-0.06|0.02|0.7001|
+|.|         10|          3|         97|     32.88254529|         39|00:00:00|-0.04|0.04|0.6908|
+|.|          8|          3|         97|     32.86432900|         39|00:00:00|-0.04|0.03|0.6919|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          97    mean value:      32.86432900
+Description of the best-so-far configuration:
+   .ID. spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes .PARENT.
+97   97                                LOCAL_ONE                                  128                                    100                                              5000                                       20       45
+
+# 2024-12-12 11:11:51 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+97                                 LOCAL_ONE                                  128                                    100                                              5000                                       20
+141                                LOCAL_ONE                                 1024                                    100                                              5000                                       20
+143                                LOCAL_ONE                                  512                                    100                                              5000                                       20
+# 2024-12-12 11:11:51 -03: Stopped because there is not enough budget left to race more than the minimum (4).
+# You may either increase the budget or set 'minNbSurvival' to a lower value.
+# Iteration: 7
+# nbIterations: 7
+# experimentsUsedSoFar: 976
+# timeUsed: 0
+# remainingBudget: 24
+# currentBudget: 24
+# number of elites: 3
+# nbConfigurations: 4
+# Total CPU user time: 151.594, CPU sys time: 38.962, Wall-clock time: 40231.8
+# 2024-12-12 11:11:51 -03: Starting post-selection:
+# Configurations selected: 97, 141, 143, 45, 126, 46, 59, 24.
+# Pending instances: 0, 0, 0, 1, 1, 1, 4, 4.
+# Seed: 1698899160
+# Configurations: 8
+# Available experiments: 24
+# minSurvival: 1
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|.|          7|          8|        141|     32.69980800|          0|00:00:00|   NA|  NA|    NA|
+|.|         11|          8|        141|     32.78207850|          0|00:00:00|+0.31|0.65|0.5549|
+|.|          1|          8|        141|     32.83790233|          0|00:00:00|+0.03|0.35|0.7265|
+|.|          5|          8|        141|     32.95093700|          0|00:00:00|-0.01|0.24|0.8103|
+|.|          2|          8|        141|     33.02160960|          0|00:00:00|-0.07|0.15|0.8960|
+|=|         15|          8|         97|     32.83280133|          5|00:03:05|-0.12|0.06|0.9088|
+|.|          3|          8|         97|     32.83007000|          5|00:00:00|-0.06|0.09|0.8565|
+|.|         10|          8|         97|     32.83057437|          5|00:00:00|-0.06|0.07|0.8804|
+|=|         12|          8|         97|     32.86017467|          7|00:01:14|-0.02|0.09|0.8411|
+|=|         14|          8|         97|     32.86788910|          9|00:01:13|-0.01|0.09|0.8135|
+|=|         13|          8|         45|     32.90071409|         11|00:01:13|+0.02|0.11|0.7838|
+|.|          8|          8|         45|     32.88881725|         11|00:00:00|+0.04|0.12|0.7844|
+|.|          9|          8|         45|     32.89911869|         11|00:00:00|+0.06|0.14|0.7707|
+|.|          6|          8|         45|     32.92815393|         11|00:00:00|+0.03|0.10|0.8089|
+|.|          4|          8|         45|     32.97616420|         11|00:00:00|+0.02|0.08|0.8331|
+|=|         16|          8|         97|     32.86518594|         19|00:04:55|+0.02|0.08|0.8281|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          97    mean value:      32.86518594
+Description of the best-so-far configuration:
+   .ID. spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes .PARENT.
+97   97                                LOCAL_ONE                                  128                                    100                                              5000                                       20       45
+
+# 2024-12-12 11:23:41 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+97                                 LOCAL_ONE                                  128                                    100                                              5000                                       20
+45                                 LOCAL_ONE                                 1024                                    100                                              5000                                       20
+143                                LOCAL_ONE                                  512                                    100                                              5000                                       20
+46                                 LOCAL_ONE                                 1024                                   2000                                              2000                                       20
+# Total CPU user time: 160.914, CPU sys time: 40.047, Wall-clock time: 40941.99
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+97                                 LOCAL_ONE                                  128                                    100                                              5000                                       20
+45                                 LOCAL_ONE                                 1024                                    100                                              5000                                       20
+143                                LOCAL_ONE                                  512                                    100                                              5000                                       20
+46                                 LOCAL_ONE                                 1024                                   2000                                              2000                                       20
+# Best configurations as commandlines (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+97  --cassandraOutputConsistencyLevel LOCAL_ONE --cassandraInputSplitSizeinMB 128 --cassandraOutputBatchSizeRows 100 --cassandraOutputBatchGroupingBufferSize 5000 --cassandraOutputConcurrentWrites 20
+45  --cassandraOutputConsistencyLevel LOCAL_ONE --cassandraInputSplitSizeinMB 1024 --cassandraOutputBatchSizeRows 100 --cassandraOutputBatchGroupingBufferSize 5000 --cassandraOutputConcurrentWrites 20
+143 --cassandraOutputConsistencyLevel LOCAL_ONE --cassandraInputSplitSizeinMB 512 --cassandraOutputBatchSizeRows 100 --cassandraOutputBatchGroupingBufferSize 5000 --cassandraOutputConcurrentWrites 20
+46  --cassandraOutputConsistencyLevel LOCAL_ONE --cassandraInputSplitSizeinMB 1024 --cassandraOutputBatchSizeRows 2000 --cassandraOutputBatchGroupingBufferSize 2000 --cassandraOutputConcurrentWrites 20
+
+
+# Testing of elite configurations: 1 
+# Testing iteration configurations: FALSE 
+# 2024-12-12 11:23:41 -03: Testing configurations (in no particular order): 97
+   spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes
+97                                LOCAL_ONE                                  128                                    100                                              5000                                       20
+# 2024-12-12 11:29:59 -03: Testing results (column number is configuration ID in no particular order):
+         seeds       97
+1t   798924220 32.93795
+2t   601966071 33.03349
+3t  1618649725 33.66641
+4t   707902699 32.72367
+5t  1274317509 33.86918
+6t  2102477807 33.67140
+7t   347771577 33.57827
+8t  1123227479 33.34719
+9t  1467793590 34.65242
+10t  897019036 33.34321
+# 2024-12-12 11:29:59 -03: Finished testing
