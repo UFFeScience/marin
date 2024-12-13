@@ -1,0 +1,2 @@
+spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes 
+LOCAL_ONE 64 auto 1000 5

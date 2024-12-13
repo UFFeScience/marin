@@ -1,0 +1,2 @@
+spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode spark.cassandra.output.consistency.level spark.cassandra.input.split.sizeInMB spark.cassandra.output.batch.size.rows spark.cassandra.output.batch.grouping.buffer.size spark.cassandra.output.concurrent.writes 
+1 1 2 200 8 0.6 true static LOCAL_ONE 64 auto 1000 5

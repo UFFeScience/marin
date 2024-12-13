@@ -1,0 +1,19 @@
+##### general configuration
+
+maxExperiments = 300
+trainInstancesDir = ""
+trainInstancesFile = "irace_configuration/instances_training.txt"
+testInstancesFile = "irace_configuration/instances_test.txt"
+targetRunner = "targetRunner.sh"
+
+##### run Irace with all parameters
+#parameterFile = "irace_configuration/parameters.txt"
+#configurationsFile= "irace_configuration/configurations.txt"
+
+##### run Irace with only cassandra parameters
+parameterFile = "irace_configuration/parameters_cassandra.txt"
+configurationsFile= "irace_configuration/configurations_cassandra.txt"
+
+##### run Irace with only spark parameters
+#parameterFile = "irace_configuration/parameters_spark.txt"
+#configurationsFile= "irace_configuration/configurations_spark.txt"

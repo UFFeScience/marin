@@ -1,0 +1,5 @@
+spark.cassandra.output.consistency.level             "--cassandraOutputConsistencyLevel "         c (ANY, LOCAL_ONE)
+spark.cassandra.input.split.sizeInMB                 "--cassandraInputSplitSizeinMB "             c (16, 32, 64, 128, 256, 512, 1024, 2056)
+spark.cassandra.output.batch.size.rows               "--cassandraOutputBatchSizeRows "            c (auto, 100, 500, 1000, 2000, 2500, 3000) 
+spark.cassandra.output.batch.grouping.buffer.size    "--cassandraOutputBatchGroupingBufferSize "  c (1000, 2000, 3000, 4000, 5000)
+spark.cassandra.output.concurrent.writes             "--cassandraOutputConcurrentWrites "         c (5, 10, 15, 20)
