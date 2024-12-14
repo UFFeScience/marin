@@ -1,0 +1,311 @@
+#------------------------------------------------------------------------------
+# irace: An implementation in R of (Elitist) Iterated Racing
+# Version: 4.0.886dd4c
+# Copyright (C) 2010-2020
+# Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+# Jeremie Dubois-Lacoste  
+# Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+#
+# This is free software, and you are welcome to redistribute it under certain
+# conditions.  See the GNU General Public License for details. There is NO
+# WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# irace builds upon previous code from the race package:
+#     race: Racing methods for the selection of the best
+#     Copyright (C) 2003 Mauro Birattari
+#------------------------------------------------------------------------------
+# installed at: /home/italons/R/x86_64-pc-linux-gnu-library/4.1/irace
+# called with: 
+# 2024-12-13 17:35:57 -03: Reading parameter file '/home/italons/Projects/marin/irace_configuration/parameters_spark.txt'.
+# 2024-12-13 17:35:57 -03: Read 1 configuration(s) from file '/home/italons/Projects/marin/irace_configuration/configurations_spark.txt'
+# 2024-12-13 17:35:57 -03: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 5
+# minNbSurvival: 5
+# nbParameters: 8
+# seed: 1755528739
+# confidence level: 0.95
+# budget: 300
+# mu: 5
+# deterministic: FALSE
+
+# 2024-12-13 17:35:57 -03: Iteration 1 of 5
+# experimentsUsedSoFar: 0
+# remainingBudget: 300
+# currentBudget: 60
+# nbConfigurations: 10
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|          1|         10|          9|     57.18134700|         10|00:10:19|   NA|  NA|    NA|
+|x|          2|         10|          4|     57.24137550|         20|00:10:13|-0.22|0.39|1.0747|
+|x|          3|         10|          4|     57.24447767|         30|00:10:17|-0.16|0.22|1.0318|
+|x|          4|         10|          4|     57.28278825|         40|00:10:16|-0.11|0.17|1.0011|
+|=|          5|         10|          4|     57.16788600|         50|00:10:15|-0.06|0.15|0.9585|
+|=|          6|         10|          4|     57.17851383|         60|00:10:14|-0.02|0.15|0.9319|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:           4    mean value:      57.17851383
+Description of the best-so-far configuration:
+  .ID. spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode .PARENT.
+4    4                    12                    6                       98                          500                         1                       0.2172                  false                                  dynamic       NA
+
+# 2024-12-13 18:37:34 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode
+4                     12                    6                       98                          500                         1                       0.2172                  false                                  dynamic
+7                      9                    1                       82                          500                         2                       0.3297                   true                                   static
+10                    17                    6                       58                          500                         3                       0.6109                  false                                  dynamic
+2                     19                    8                       66                          400                         7                       0.8922                  false                                   static
+9                      2                    7                       50                          200                         4                       0.1047                  false                                   static
+# 2024-12-13 18:37:34 -03: Iteration 2 of 5
+# experimentsUsedSoFar: 60
+# remainingBudget: 240
+# currentBudget: 60
+# nbConfigurations: 12
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|          7|         12|          4|     56.34583000|         12|00:12:17|   NA|  NA|    NA|
+|x|          1|         12|         11|     56.84350450|         19|00:07:10|+0.53|0.77|0.3799|
+|x|          6|         12|         11|     56.09018300|         26|00:07:08|+0.55|0.70|0.3791|
+|x|          2|         12|         12|     56.96729950|         33|00:07:10|+0.35|0.51|0.5609|
+|=|          4|         12|         12|     56.94974140|         40|00:07:10|+0.17|0.34|0.7667|
+|-|          5|          9|         11|     56.73127650|         47|00:07:11|+0.14|0.28|0.7436|
+|-|          3|          5|         11|     56.49545843|         51|00:04:03|+0.06|0.19|0.7581|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          11    mean value:      56.49545843
+Description of the best-so-far configuration:
+   .ID. spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode .PARENT.
+11   11                    21                    8                      110                          500                         4                       0.4812                  false                                  dynamic       10
+
+# 2024-12-13 19:29:47 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode
+11                    21                    8                      110                          500                         4                       0.4812                  false                                  dynamic
+12                    11                    7                      108                          500                         1                       0.1905                  false                                  dynamic
+4                     12                    6                       98                          500                         1                       0.2172                  false                                  dynamic
+16                    19                    7                       68                          300                         4                       0.2996                  false                                  dynamic
+7                      9                    1                       82                          500                         2                       0.3297                   true                                   static
+# 2024-12-13 19:29:47 -03: Iteration 3 of 5
+# experimentsUsedSoFar: 111
+# remainingBudget: 189
+# currentBudget: 63
+# nbConfigurations: 12
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|          8|         12|          4|     55.19550500|         12|00:12:14|   NA|  NA|    NA|
+|x|          6|         12|         24|     56.59173550|         19|00:07:11|+0.44|0.72|0.7343|
+|x|          3|         12|         24|     56.74125433|         26|00:07:11|+0.48|0.66|0.5616|
+|x|          5|         12|         11|     56.09870750|         33|00:07:07|+0.29|0.47|0.7368|
+|-|          4|          8|         11|     56.28713180|         40|00:07:08|-0.00|0.20|0.8417|
+|=|          1|          8|         11|     56.36550000|         43|00:03:04|+0.06|0.21|0.7998|
+|=|          2|          8|         24|     57.03791971|         46|00:03:04|+0.09|0.22|0.8171|
+|=|          7|          8|         12|     57.10786737|         49|00:03:01|+0.11|0.22|0.7924|
+|=|          9|          8|         12|     57.12348156|         57|00:08:11|+0.11|0.21|0.7873|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          12    mean value:      57.12348156
+Description of the best-so-far configuration:
+   .ID. spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode .PARENT.
+12   12                    11                    7                      108                          500                         1                       0.1905                  false                                  dynamic        4
+
+# 2024-12-13 20:28:04 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode
+12                    11                    7                      108                          500                         1                       0.1905                  false                                  dynamic
+4                     12                    6                       98                          500                         1                       0.2172                  false                                  dynamic
+24                     9                    4                       97                          300                         2                       0.2710                   true                                  dynamic
+11                    21                    8                      110                          500                         4                       0.4812                  false                                  dynamic
+18                    14                    8                       81                          500                         4                       0.2155                  false                                   static
+# 2024-12-13 20:28:04 -03: Iteration 4 of 5
+# experimentsUsedSoFar: 168
+# remainingBudget: 132
+# currentBudget: 66
+# nbConfigurations: 11
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|         10|         11|          4|     55.73950100|         11|00:11:11|   NA|  NA|    NA|
+|x|          4|         11|         12|     56.92365900|         17|00:06:09|-0.25|0.38|1.2115|
+|x|          6|         11|         12|     56.83959333|         23|00:06:04|+0.01|0.34|1.0011|
+|x|          8|         11|         12|     56.81959050|         29|00:06:06|+0.07|0.30|0.9291|
+|=|          1|         11|         12|     56.90071200|         35|00:06:08|+0.02|0.21|0.9408|
+|=|          5|         11|          4|     56.66270800|         41|00:06:06|-0.05|0.13|0.9581|
+|=|          3|         11|         11|     56.55248986|         47|00:06:05|-0.02|0.13|0.9052|
+|=|          2|         11|         25|     56.44162650|         53|00:06:06|+0.02|0.14|0.9022|
+|=|          7|         11|         28|     56.86095633|         59|00:06:07|+0.04|0.14|0.8818|
+|=|          9|         11|         28|     56.86103380|         65|00:06:07|+0.06|0.16|0.8718|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          28    mean value:      56.86103380
+Description of the best-so-far configuration:
+   .ID. spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode .PARENT.
+28   28                    22                    3                       73                          500                         1                        0.366                  false                                  dynamic       24
+
+# 2024-12-13 21:34:17 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode
+28                    22                    3                       73                          500                         1                       0.3660                  false                                  dynamic
+4                     12                    6                       98                          500                         1                       0.2172                  false                                  dynamic
+25                    24                    8                       85                          500                         4                       0.5040                  false                                  dynamic
+12                    11                    7                      108                          500                         1                       0.1905                  false                                  dynamic
+11                    21                    8                      110                          500                         4                       0.4812                  false                                  dynamic
+# 2024-12-13 21:34:17 -03: Iteration 5 of 5
+# experimentsUsedSoFar: 233
+# remainingBudget: 67
+# currentBudget: 67
+# nbConfigurations: 10
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|x|         11|         10|         35|     55.95282600|         10|00:10:12|   NA|  NA|    NA|
+|x|          8|         10|         35|     55.80706850|         15|00:05:01|+0.13|0.56|0.8415|
+|x|          5|         10|         31|     54.72095500|         20|00:05:04|-0.08|0.28|0.7816|
+|x|          3|         10|         31|     55.29249275|         25|00:05:08|-0.02|0.23|0.8867|
+|=|          4|         10|         31|     55.40377280|         30|00:05:03|+0.05|0.24|0.8231|
+|=|          7|         10|         31|     55.06004900|         35|00:05:01|+0.14|0.28|0.7361|
+|=|         10|         10|         31|     55.39827643|         40|00:05:05|+0.02|0.16|0.8414|
+|=|          6|         10|         31|     55.60803750|         45|00:05:06|+0.04|0.16|0.8498|
+|=|          9|         10|         31|     55.71727078|         50|00:05:06|+0.10|0.20|0.8055|
+|-|          2|          6|         31|     55.60597240|         55|00:05:02|+0.05|0.15|0.7338|
+|=|          1|          6|         31|     55.69041755|         56|00:01:00|+0.08|0.16|0.7217|
+|=|         12|          6|         31|     55.81758383|         62|00:06:04|+0.04|0.12|0.7627|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          31    mean value:      55.81758383
+Description of the best-so-far configuration:
+   .ID. spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode .PARENT.
+31   31                    10                    6                      121                          500                         1                       0.4435                  false                                  dynamic        4
+
+# 2024-12-13 22:37:14 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode
+31                    10                    6                      121                          500                         1                       0.4435                  false                                  dynamic
+28                    22                    3                       73                          500                         1                       0.3660                  false                                  dynamic
+12                    11                    7                      108                          500                         1                       0.1905                  false                                  dynamic
+4                     12                    6                       98                          500                         1                       0.2172                  false                                  dynamic
+25                    24                    8                       85                          500                         4                       0.5040                  false                                  dynamic
+# 2024-12-13 22:37:14 -03: Stopped because there is not enough budget left to race more than the minimum (5).
+# You may either increase the budget or set 'minNbSurvival' to a lower value.
+# Iteration: 6
+# nbIterations: 6
+# experimentsUsedSoFar: 295
+# timeUsed: 0
+# remainingBudget: 5
+# currentBudget: 5
+# number of elites: 5
+# nbConfigurations: 5
+# Total CPU user time: 46.247, CPU sys time: 11.99, Wall-clock time: 18076.6
+# 2024-12-13 22:37:14 -03: Starting post-selection:
+# Configurations selected: 31, 28, 12, 4, 25.
+# Pending instances: 0, 0, 0, 0, 0.
+# Seed: 1755528739
+# Configurations: 5
+# Available experiments: 5
+# minSurvival: 1
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded.
+
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|       Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+|.|          3|          5|         25|     54.45519500|          0|00:00:00|   NA|  NA|    NA|
+|.|         10|          5|         25|     55.34789750|          0|00:00:00|-0.10|0.45|0.6150|
+|.|          6|          5|         25|     55.18251800|          0|00:00:00|+0.03|0.36|0.4585|
+|.|          2|          5|         25|     55.57538250|          0|00:00:00|-0.02|0.24|0.7750|
+|.|          1|          5|         25|     55.84550620|          0|00:00:00|+0.06|0.25|0.7638|
+|.|          7|          5|         25|     56.10115983|          0|00:00:00|+0.03|0.19|0.7818|
+|.|          9|          5|         25|     56.24058243|          0|00:00:00|+0.10|0.23|0.7303|
+|.|         11|          5|         25|     56.38316787|          0|00:00:00|+0.07|0.18|0.7585|
+|.|          8|          5|         25|     56.47524600|          0|00:00:00|+0.06|0.16|0.7289|
+|.|          5|          5|         25|     56.56708330|          0|00:00:00|+0.10|0.19|0.6911|
+|.|         12|          5|         25|     56.62500264|          0|00:00:00|+0.02|0.11|0.7547|
+|.|          4|          5|         25|     56.71458500|          0|00:00:00|+0.04|0.12|0.7275|
+|=|         13|          5|         31|     55.94140954|          5|00:05:07|+0.02|0.09|0.7454|
++-+-----------+-----------+-----------+----------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          31    mean value:      55.94140954
+Description of the best-so-far configuration:
+   .ID. spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode .PARENT.
+31   31                    10                    6                      121                          500                         1                       0.4435                  false                                  dynamic        4
+
+# 2024-12-13 22:42:21 -03: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode
+31                    10                    6                      121                          500                         1                       0.4435                  false                                  dynamic
+28                    22                    3                       73                          500                         1                       0.3660                  false                                  dynamic
+12                    11                    7                      108                          500                         1                       0.1905                  false                                  dynamic
+4                     12                    6                       98                          500                         1                       0.2172                  false                                  dynamic
+25                    24                    8                       85                          500                         4                       0.5040                  false                                  dynamic
+# Total CPU user time: 47.039, CPU sys time: 12.212, Wall-clock time: 18383.81
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode
+31                    10                    6                      121                          500                         1                       0.4435                  false                                  dynamic
+28                    22                    3                       73                          500                         1                       0.3660                  false                                  dynamic
+12                    11                    7                      108                          500                         1                       0.1905                  false                                  dynamic
+4                     12                    6                       98                          500                         1                       0.2172                  false                                  dynamic
+25                    24                    8                       85                          500                         4                       0.5040                  false                                  dynamic
+# Best configurations as commandlines (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+31 --executorMemory 10 --driverCores 6 --executorInstances 121 --sqlShufflePartitions 500 --defaultParallelism 1 --memoryFraction 0.4435 --shuffleCompress false --partitionOverwriteMode dynamic
+28 --executorMemory 22 --driverCores 3 --executorInstances 73 --sqlShufflePartitions 500 --defaultParallelism 1 --memoryFraction 0.366 --shuffleCompress false --partitionOverwriteMode dynamic
+12 --executorMemory 11 --driverCores 7 --executorInstances 108 --sqlShufflePartitions 500 --defaultParallelism 1 --memoryFraction 0.1905 --shuffleCompress false --partitionOverwriteMode dynamic
+4  --executorMemory 12 --driverCores 6 --executorInstances 98 --sqlShufflePartitions 500 --defaultParallelism 1 --memoryFraction 0.2172 --shuffleCompress false --partitionOverwriteMode dynamic
+25 --executorMemory 24 --driverCores 8 --executorInstances 85 --sqlShufflePartitions 500 --defaultParallelism 4 --memoryFraction 0.504 --shuffleCompress false --partitionOverwriteMode dynamic
+
+
+# Testing of elite configurations: 1 
+# Testing iteration configurations: FALSE 
+# 2024-12-13 22:42:21 -03: Testing configurations (in no particular order): 31
+   spark.executor.memory spark.executor.cores spark.executor.instances spark.sql.shuffle.partitions spark.default.parallelism spark.storage.memoryFraction spark.shuffle.compress spark.sql.sources.partitionOverwriteMode
+31                    10                    6                      121                          500                         1                       0.4435                  false                                  dynamic
+# 2024-12-13 22:52:22 -03: Testing results (column number is configuration ID in no particular order):
+         seeds       31
+1t  1061707088 55.26077
+2t   449532125 56.57249
+3t  1170371306 55.73796
+4t  1213444746 57.33359
+5t  1841437877 57.23705
+6t    29900256 51.36338
+7t  1158455221 57.25162
+8t   738180801 55.99923
+9t  1534519065 57.22861
+10t 1961696364 56.76730
+# 2024-12-13 22:52:22 -03: Finished testing
