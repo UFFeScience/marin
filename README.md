@@ -74,6 +74,18 @@ Tool based on the iRace library of the R language, using the marin approach for 
 
     - **Apache Cassandra**:
     Follow the instructions on [https://cassandra.apache.org/_/download.html](https://cassandra.apache.org/_/download.html)
+
+    Open Cassandra prompt and run the following commands to create the keyspace and the logs_wordcount table:
+    ```
+    -- Create a keyspace
+    CREATE KEYSPACE IF NOT EXISTS main_keyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : '1' };
+
+    -- Create the table
+    CREATE TABLE main_keyspace.logs_wordcount (
+    word text PRIMARY KEY, 
+    count int   
+    );
+    ```
     
     
 
