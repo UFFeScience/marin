@@ -90,7 +90,7 @@ Tool based on the iRace library of the R language, using the marin approach for 
     
 
 # Running directly
-- To run the application directly, to test or debug proposes, you must call the main.py file on the irace-logs project home directory:
+- To run the application directly, to test or debug purposes, you must call the main.py file on the irace-logs project home directory:
 ```
 python3 /{$PROJECT_HOME}/irace-logs/main.py
 ```
